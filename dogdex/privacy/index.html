@@ -1,0 +1,12 @@
+<div id="content"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
+<script>
+fetch("policy.md")
+  .then(r => r.text())
+  .then(text => {
+    document.getElementById("content").innerHTML =
+      marked.parse(text);
+  });
+</script>
